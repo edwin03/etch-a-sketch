@@ -9,20 +9,17 @@ def mov_fd():
     tim.fd(10)
 
 def mov_lf():
-    tim.seth(180)
-    tim.fd(10)
+    tim.seth(tim.heading()+10)
 
 def mov_rh():
-    tim.seth(0)
-    tim.fd(10)
+    tim.seth(tim.heading()-10)
 
 def mov_dw():
-    tim.seth(270)
-    tim.fd(10)
+    tim.backward(10)
 
 def clear():
-    screen.clearscreen()
     tim.home()
+    tim.clear()
 
 screen.onkey(mov_fd, "w")
 screen.onkey(mov_dw, "s")
